@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/javascript.fullPage.css" />
+
+</head>
+<body>
+	<main id="onepage">
+		<div class="section " id="section1">
+			<div class="container flex-item">
+				<div class="row">
+					<div class="col-12 main-div">
+						<h1 class="text-center">Aplikacja</h1>
+						<h4 class="text-center">Założenia</h4>
+						<ul>
+							<li>Aplikacja korzysta z dowolnego publicznego API i wyświetla listę podanych przez użytkownika projektów, pobranych elementów (publiczne API dowolne, np. API Travis CI/Github – status ostatnich udanych buildów wybranych projektów)</li>
+							<li>Aplikacja przewiduje, że użytkownik poda niepoprawny url</li>
+							<li>Lista składa się z max. 5 elementów</li>
+							<li>UI: tytuł i założenie projektu, lista, autor. Co drugi element listy wyróżniony innym kolorem</li>
+							<li>Użycie Less, Flexbox</li>
+							<li>Kod znajduje się na publicznym repozytorium Github’a</li>
+						</ul>
+					</div>			
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section2">
+			<div class="container flex-item">
+				<div class="row">
+					<div class="col-12">
+						<form name="myForm" ng-controller="Controller">
+							<div class="input-group">
+								<input type="url" name="input" ng-model="link" class="form-control" placeholder="https://api.github.com/users/username/events"
+								ng-class="{'error': myForm.input.$error.url}"
+								ng-keyup="$event.keyCode == 13 && search()"
+								required >
+								<span class="input-group-btn">
+									<button class="btn btn-orange" ng-click="search()"" type="button">Wyszukaj</button>
+								</span>
+							</div>
+							<div>
+								<ul id="list" class="list-group">
+									<li class="list-group-item" ng-model="listinfo"
+									ng-class="{'is-hidden': infotext.value }">{{infotext.text}}</li>
+									<li class="list-group-item list-item" ng-repeat="item in listitems | limitTo:5 ">
+										Nazwa: {{item.repo.name}} <br/>
+										Link: {{item.repo.url}}
+									</li>
+									
+								</ul>
+							</div>	
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section " id="section3">
+			<div class="container flex-item">
+				<div class="row">
+					<div class="col-12 authour main-div">
+						Autor: Mateusz Rzepecki
+					</div>			
+				</div>
+			</div>
+		</div>
+	</main>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/javascript.fullPage.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

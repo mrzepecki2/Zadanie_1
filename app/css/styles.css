@@ -1,0 +1,73 @@
+body {
+  background-color: white;
+  font-size: 16px;
+  color: #131516;
+  font-family: 'Lato', sans-serif;
+}
+.btn-orange {
+  color: white;
+  background-color: #FFC400;
+}
+.btn-orange:hover {
+  background-color: #FFAB00;
+}
+.btn-orange:focus {
+  box-shadow: none;
+}
+.is-hidden {
+  display: none;
+}
+.flex-container,
+.section {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+.flex-item {
+  -webkit-flex: 1 auto;
+  flex: 1 auto;
+}
+.text-center {
+  text-align: center;
+}
+form input.error {
+  box-shadow: inset 0px 0px 5px 1px #ff0000;
+}
+.section .main-div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+}
+#section1 {
+  background-color: #80CBC4;
+}
+#section1 .main-div {
+  background-color: #1DE9B6;
+}
+#section2 {
+  background-color: #FFE082;
+}
+#section2 .main-div {
+  background-color: #FFC400;
+}
+#section3 {
+  background-color: #81D4FA;
+}
+#section3 .main-div {
+  background-color: #40C4FF;
+}
+#list li.list-item:nth-child(odd) {
+  background: #FFF8E1;
+}
+.authour {
+  text-align: center;
+  font-size: 3em;
+}
+@media screen and (max-width: 767px) {
+  .authour {
+    font-size: 2em;
+  }
+}

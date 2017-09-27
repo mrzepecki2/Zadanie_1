@@ -1,0 +1,59 @@
+@import "variables.less";
+@import "base.less";
+
+
+form{
+	input{
+		&.error{
+			box-shadow: inset 0px 0px 5px 1px rgba(255,0,0,1);
+		}
+	}
+}
+
+.section{
+	&:extend(.flex-container);
+	.main-div{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-radius: 5px;
+	}
+}
+
+#section1{
+	background-color: @teal_bg;
+	.main-div{
+		background-color: @teal_a400;
+	}
+}
+
+#section2{
+	background-color: @amber_bg;
+	.main-div{
+		background-color: @amber_a400;
+	}	
+}
+
+
+#section3{
+	background-color: @blue_bg;
+	.main-div{
+		background-color: @blue_a400;
+	}
+}
+
+#list{
+	li.list-item{
+		&:nth-child(odd){
+			background: #FFF8E1;
+		}
+	}
+}
+
+.authour{
+	text-align:	center;
+	font-size: 3em;
+	@media screen and (max-width: 767px){
+		font-size: 2em;
+	}
+}
+

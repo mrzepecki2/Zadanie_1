@@ -1,0 +1,45 @@
+body{
+	background-color: white;
+	font-size: @font_size;
+	color: @font_color;
+	font-family: 'Lato', sans-serif;
+}
+
+.btn{
+	&-orange{
+		color: white;
+   		background-color: @amber_a400;
+   		&:hover{
+   			background-color: @amber_a700;
+   		}
+   		&:focus{
+   			box-shadow: none;
+   		}
+	}
+
+}
+
+.is{
+	&-hidden{
+		display: none;
+	}
+}
+
+.flex-container{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+}
+.flex-item{
+	-webkit-flex: 1 auto;
+	flex: 1 auto;
+}
+
+.text{
+	&-center{
+		text-align: center;
+	}
+}
